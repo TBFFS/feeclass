@@ -1,11 +1,14 @@
 {
- "name": "feeclass",
- "version": "0.0.1",
- "description": "An app to visualize student data",
- "author": "Todd Groff <todd.groff@gmail.com>",
- "main": "app.js",
- "repository": {
-   "type": "git",
-   "url": "https://github.com/toddgroff/feeclass"
- }
+  "name": "feeclass",
+  "version": "0.0.1",
+  "description": "An app to visualize student data",
+  "author": "Todd Groff <todd.groff@gmail.com>",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toddgroff/feeclass"
+  },
+  "dependencies": {
+    "express": "^4.12.2"
+  }
 }
