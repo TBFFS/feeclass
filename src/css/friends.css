@@ -1,0 +1,57 @@
+@import url('reset.css');
+
+body {
+  background-color: #EDEDEB;
+  font-family: 'Lato', sans-serif;
+}
+
+input {
+  padding: .5em;
+  margin: .5em;
+}
+
+label {
+  display: block;
+}
+
+.friend-form {
+  padding: 1em;
+  width: 20em;
+  margin: 3em auto;
+}
+
+.form-group {
+
+}
+
+.text-field {
+  width: 100%;
+  font-size: 1em;
+}
+
+.text-field-label {
+  font-size: 1.5em;
+}
+
+.form-group-scale {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.scale-labels {
+  padding: .2em;
+}
+
+.radio-labels {
+  padding: .1em 0;
+}
+
+.add-friend-btn {
+  padding: 1em;
+  width: 100%;
+  background: #65C178;
+  border: none;
+  border-radius: .25em;
+}

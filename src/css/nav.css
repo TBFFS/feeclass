@@ -1,0 +1,17 @@
+.nav-div {
+  background-color: #3D3D3D;
+  padding: 1em;
+  width: 100%;
+  position: fixed;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  margin: .5em;
+}
+
+.nav-link:hover {
+  background-color: rgba(159, 158, 156, 0.92);
+}

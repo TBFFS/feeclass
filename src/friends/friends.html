@@ -2,68 +2,71 @@
 
 <form class="friend-form" ng-submit="vm.addFriend()">
   <div class="form-group">
-    <label>Name</label>
-    <input ng-model="vm.newFriend.name" type="text" name="name">
+    <label class="text-field-label">Name</label>
+    <input class="text-field" ng-model="vm.newFriend.name" type="text" name="name">
   </div>
 
   <div class="form-group">
-    <label>Address</label>
-    <input ng-model="vm.newFriend.address" type="text" name="name">
+    <label class="text-field-label">Address</label>
+    <input class="text-field" ng-model="vm.newFriend.address" type="text" name="name">
   </div>
 
   <div class="form-group">
     <h2>How is his/her hair?</h2>
-    <div>
-      <p>
+    <div class="form-group-scale">
+      <p class="scale-labels">
         BootStrap
       </p>
-      <label>
-        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="1">
+      <label class="radio-labels">
         1
+        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="1">
       </label>
-      <label>
-        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="2">
+      <label class="radio-labels">
         2
+        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="2">
       </label>
-      <label>
-        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="3">
+      <label class="radio-labels">
         3
+        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="3">
       </label>
-      <label>
-        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="4">
+      <label class="radio-labels">
         4
+        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="4">
       </label>
-      <label>
-        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="5">
+      <label class="radio-labels">
         5
+        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="5">
       </label>
-      <p>
+      <p class="scale-labels">
         rLite
       </p>
     </div>
   </div>
 
   <div class="form-group">
-    <label>Birthday</label>
-    <input ng-model="vm.newFriend.birthDate" type="text" name="name">
+    <label class="text-field-label">Birthday</label>
+    <input class="text-field" ng-model="vm.newFriend.birthDate" type="text" name="name">
   </div>
 
   <div class="form-group">
-    <label>Birth City</label>
-    <input ng-model="vm.newFriend.birthCity" type="text" name="name">
+    <label class="text-field-label">Birth City</label>
+    <input class="text-field" ng-model="vm.newFriend.birthCity" type="text" name="name">
   </div>
 
   <div class="form-group">
-    <label>
-      <input ng-model="vm.newFriend.gender" type="radio" name="gender" value="m">
-       Male
-    </label>
-    <label>
-      <input ng-model="vm.newFriend.gender" type="radio" name="gender" value="f">
-      Female
-    </label>
+    <div class="form-group-scale">
+      <h2 class="scale-labels">Gender</h2>
+      <label class="radio-labels">
+        <input ng-model="vm.newFriend.gender" type="radio" name="gender" value="m">
+         Male
+      </label>
+      <label class="radio-labels">
+        <input ng-model="vm.newFriend.gender" type="radio" name="gender" value="f">
+        Female
+      </label>
+    </div>
   </div>
 
-  <button>Add Friend</button>
+  <button class="add-friend-btn">Add Friend</button>
 
 </form>

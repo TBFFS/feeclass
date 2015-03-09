@@ -9,7 +9,7 @@ app.config(['$routeProvider', function ($routeProvider) {
       }]
     }
   });
-}]).controller('DataCtrl', ['friends', '$scope', function (friends, $scope) {
+}]).controller('DataCtrl', ['friends', function (friends) {
   console.log('fasd');
   var self = this;
   self.friendList = friends;
