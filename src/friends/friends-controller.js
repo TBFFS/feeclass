@@ -2,18 +2,22 @@ app.config(['$routeProvider', function ($routeProvider) {
   var routeDefinition = {
     controller: 'FriendsCtrl',
     controllerAs: 'vm',
-    templateUrl: 'friends/friends.html'
-    // resolve: {
-    //   friends: ['friendsService', function (friendsService) {
-    //     friendsService.get()
-    //   }]
-    // }
+    templateUrl: 'friends/friends.html',
+    resolve: {
+      friends: ['friendsService', function (friendsService) {
+        return friendsService.getFriendList();
+      }]
+    }
   };
   $routeProvider.when('/', routeDefinition).when('/friends', routeDefinition)
-}]).controller('FriendsCtrl', ['Friend', 'friendsService', function (Friend, friendsService) {
-  console.log('hey');
+}]).controller('FriendsCtrl', ['Friend', 'friends', 'friendsService',
+  function (Friend, friends, friendsService) {
 
   var self = this;
+
+  self.friendList = friends;
+
+  console.log(self.friendList);
 
   self.newFriend = Friend();
 

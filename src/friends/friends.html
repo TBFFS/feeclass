@@ -1,9 +1,56 @@
-<h1>Hello FEE Class!</h1>
+<h1>Hello TBFFs!</h1>
 
 <form class="friend-form" ng-submit="vm.addFriend()">
   <div class="form-group">
     <label>Name</label>
     <input ng-model="vm.newFriend.name" type="text" name="name">
+  </div>
+
+  <div class="form-group">
+    <label>Address</label>
+    <input ng-model="vm.newFriend.address" type="text" name="name">
+  </div>
+
+  <div class="form-group">
+    <h2>How is his/her hair?</h2>
+    <div>
+      <p>
+        BootStrap
+      </p>
+      <label>
+        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="1">
+        1
+      </label>
+      <label>
+        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="2">
+        2
+      </label>
+      <label>
+        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="3">
+        3
+      </label>
+      <label>
+        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="4">
+        4
+      </label>
+      <label>
+        <input ng-model="vm.newFriend.hair" type="radio" name="hair" value="5">
+        5
+      </label>
+      <p>
+        rLite
+      </p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Birthday</label>
+    <input ng-model="vm.newFriend.birthDate" type="text" name="name">
+  </div>
+
+  <div class="form-group">
+    <label>Birth City</label>
+    <input ng-model="vm.newFriend.birthCity" type="text" name="name">
   </div>
 
   <div class="form-group">
@@ -18,5 +65,5 @@
   </div>
 
   <button>Add Friend</button>
-  
+
 </form>

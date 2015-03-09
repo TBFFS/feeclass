@@ -6,7 +6,7 @@ app.factory('Friend', function () {
       address: spec.address,
       gender: spec.gender,
       birthDate: spec.birthDate,
-      meetingDate: spec.meetingDate,
+      hair: spec.hair,
       birthCity: spec.birthCity
     };
   }
