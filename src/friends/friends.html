@@ -1,0 +1,22 @@
+<h1>Hello FEE Class!</h1>
+
+<form class="friend-form" ng-submit="vm.addFriend()">
+  <div class="form-group">
+    <label>Name</label>
+    <input ng-model="vm.newFriend.name" type="text" name="name">
+  </div>
+
+  <div class="form-group">
+    <label>
+      <input ng-model="vm.newFriend.gender" type="radio" name="gender" value="m">
+       Male
+    </label>
+    <label>
+      <input ng-model="vm.newFriend.gender" type="radio" name="gender" value="f">
+      Female
+    </label>
+  </div>
+
+  <button>Add Friend</button>
+  
+</form>
