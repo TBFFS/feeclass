@@ -1,4 +1,4 @@
-app.factory('friendsServices', ['$http', '$log', function($http, $log) {
+app.factory('friendsService', ['$http', '$log', function($http, $log) {
   function get(url) {
     return processAjaxPromise($http.get(url));
   }
@@ -27,6 +27,7 @@ app.factory('friendsServices', ['$http', '$log', function($http, $log) {
     },
 
     addFriend: function (friend) {
+      console.log(friend)
       return post('/api/friends', friend);
     },
 
@@ -34,5 +35,5 @@ app.factory('friendsServices', ['$http', '$log', function($http, $log) {
       return remove('/api/friends', friend);
     }
   };
-  
+
 }]);

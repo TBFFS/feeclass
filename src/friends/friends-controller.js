@@ -18,6 +18,7 @@ app.config(['$routeProvider', function ($routeProvider) {
   self.newFriend = Friend();
 
   self.addFriend = function () {
+    console.log(self.newFriend);
     friendsService.addFriend(self.newFriend);
   }
 
