@@ -1,3 +1,3 @@
 #FEE Class Node Project
 
-Learning how to create a node server
+An app to visualize student data
