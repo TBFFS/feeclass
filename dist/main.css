@@ -36,7 +36,8 @@ table {
   background-color: #3D3D3D;
   padding: 1em;
   width: 100%;
-  position: fixed; }
+  position: fixed;
+  top: 0; }
 
 .nav-link {
   color: white;
@@ -88,3 +89,6 @@ label {
   background: #65C178;
   border: none;
   border-radius: .25em; }
+
+.friends-list {
+  margin-top: 4em; }

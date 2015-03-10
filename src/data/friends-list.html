@@ -1,7 +1,3 @@
-<p>
-  friends and shiz
-</p>
-
-<ul>list:
-  <li ng-repeat="user in vm.friendList">{{user.name}}</li>
+<ul class="friends-list">
+  <li ng-repeat="user in vm.friendList | orderBy: 'name'">{{user.name}}</li>
 </ul>

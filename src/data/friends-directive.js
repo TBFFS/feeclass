@@ -1,5 +1,4 @@
 (function () {
-  console.log('heyfasdf')
   app.directive('friendsList', function () {
     return {
       restrict: 'E',

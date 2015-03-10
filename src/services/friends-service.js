@@ -27,7 +27,6 @@ app.factory('friendsService', ['$http', '$log', function($http, $log) {
     },
 
     addFriend: function (friend) {
-      console.log(friend)
       return post('/api/friends', friend);
     },
 

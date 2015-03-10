@@ -1,8 +1,10 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
-    app = express();
-    Nedb = require('nedb'),
-    db = new Nedb();
+    app = express(),
+    // Nedb = require('nedb'),
+    // path = require('path'),
+    Datastore = require('nedb'),
+    db = new Datastore({ filename: 'db/friends.db', autoload: true });
 
 //Allow JSON posts/puts
 app.use(bodyParser.json());
@@ -38,7 +40,7 @@ app.post('/api/friends', function (req, res) {
 });
 
 app.delete('/api/friends/:id', function (req, res) {
-  db.remove({ _id: req.params.id  }, {}, function (err, numRemoved) {
+  db.remove({ _id: req.params.id }, {}, function (err, numRemoved) {
     if (err) {
       res.status(500).json(err);
     } else {

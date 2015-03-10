@@ -10,8 +10,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     }
   };
   $routeProvider.when('/', routeDefinition).when('/friends', routeDefinition)
-}]).controller('FriendsCtrl', ['Friend', 'friends', 'friendsService',
-  function (Friend, friends, friendsService) {
+}])
+.controller('FriendsCtrl', ['$location', 'Friend', 'friends', 'friendsService', function ($location, Friend, friends, friendsService) {
 
   var self = this;
 
@@ -24,8 +24,12 @@ app.config(['$routeProvider', function ($routeProvider) {
   self.addFriend = function () {
     console.log(self.newFriend);
     friendsService.addFriend(self.newFriend).then(function () {
-      self.friendList.push(self.newFriend);
+      self.goToData();
     })
+  }
+
+  self.goToData = function () {
+    $location.path('/data');
   }
 
 }])

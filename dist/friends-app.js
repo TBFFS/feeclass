@@ -17,7 +17,6 @@ app.config(['$routeProvider', function ($routeProvider) {
   console.log(self.friends);
 }]);
 (function () {
-  console.log('heyfasdf')
   app.directive('friendsList', function () {
     return {
       restrict: 'E',
@@ -42,16 +41,15 @@ $(function () {
     };
 
     $.ajax({
-     type: "POST",
-     url: '/api/friends',
-     data: JSON.stringify(newFriend),
-     contentType : 'application/json',
-     dataType: 'json'
-   }).done(redrawFriends);
+      type: "POST",
+      url: '/api/friends',
+      data: JSON.stringify(newFriend),
+      contentType : 'application/json',
+      dataType: 'json'
+    }).done(redrawFriends);
 
     return false;
   });
-
 
 });
 app.factory('Friend', function () {
@@ -79,8 +77,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     }
   };
   $routeProvider.when('/', routeDefinition).when('/friends', routeDefinition)
-}]).controller('FriendsCtrl', ['Friend', 'friends', 'friendsService',
-  function (Friend, friends, friendsService) {
+}])
+.controller('FriendsCtrl', ['$location', 'Friend', 'friends', 'friendsService', function ($location, Friend, friends, friendsService) {
 
   var self = this;
 
@@ -92,7 +90,13 @@ app.config(['$routeProvider', function ($routeProvider) {
 
   self.addFriend = function () {
     console.log(self.newFriend);
-    friendsService.addFriend(self.newFriend);
+    friendsService.addFriend(self.newFriend).then(function () {
+      self.goToData();
+    })
+  }
+
+  self.goToData = function () {
+    $location.path('/data');
   }
 
 }])
@@ -128,7 +132,6 @@ app.factory('friendsService', ['$http', '$log', function($http, $log) {
     },
 
     addFriend: function (friend) {
-      console.log(friend)
       return post('/api/friends', friend);
     },
 
