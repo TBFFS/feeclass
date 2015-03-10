@@ -23,7 +23,9 @@ app.config(['$routeProvider', function ($routeProvider) {
 
   self.addFriend = function () {
     console.log(self.newFriend);
-    friendsService.addFriend(self.newFriend);
+    friendsService.addFriend(self.newFriend).then(function () {
+      self.friendList.push(self.newFriend);
+    })
   }
 
 }])

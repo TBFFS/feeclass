@@ -29,21 +29,22 @@ app.post('/api/friends', function (req, res) {
 
   db.insert(friend, function (err, friendRecord) {
     if (err) {
-      sonole.log(err);
-      res.status(400).json(err);
+      console.log(err);
+      res.status(500).json(err);
     } else {
       res.json(friendRecord);
     }
   });
 });
 
-app.delete('/api/friends', function (req, res) {
-  for (var i = 0; i < friends.length; ++i) {
-    if (friends[i] === req) {
-      friends.splice(i, 1);
-    };
-  };
-  res.json(friends);
+app.delete('/api/friends/:id', function (req, res) {
+  db.remove({ _id: req.params.id  }, {}, function (err, numRemoved) {
+    if (err) {
+      res.status(500).json(err);
+    } else {
+      res.status(204).end();
+    }
+  });
 });
 
 // Start the server
