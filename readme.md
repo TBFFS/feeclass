@@ -1,3 +1,2 @@
-#FEE Class Node Project
-
-An app to visualize student data
+# feeclass
+My Friends, Charted- A simple analytics app for your friends built off node 

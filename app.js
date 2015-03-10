@@ -1,25 +1,40 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
     app = express();
-    friends = [];
+    Nedb = require('nedb'),
+    db = new Nedb();
 
 //Allow JSON posts/puts
 app.use(bodyParser.json());
 
 //Specify src as the plac where public files are found
 app.use(express.static(__dirname + '/src'));
+app.use('/dist', express.static(__dirname + '/dist'));
 
 //Add a route, so when you request GET /api/friends, this route
 //will run.
 //req = the request (incoming data from the client)
 //res = the response (outgoing data to the client)
 app.get('/api/friends', function (req, res) {
-  res.json(friends);
+  db.find({}, function (err, friends) {
+    res.json(friends);
+  });
 });
 
 app.post('/api/friends', function (req, res) {
-  friends.push(req.body);
-  res.json(req.body);
+  var friend = {
+    name: req.body.name,
+    gender: req.body.gender
+  };
+
+  db.insert(friend, function (err, friendRecord) {
+    if (err) {
+      sonole.log(err);
+      res.status(400).json(err);
+    } else {
+      res.json(friendRecord);
+    }
+  });
 });
 
 app.delete('/api/friends', function (req, res) {

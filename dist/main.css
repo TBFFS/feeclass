@@ -1,0 +1,90 @@
+@import url('reset.css');
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.nav-div {
+  background-color: #3D3D3D;
+  padding: 1em;
+  width: 100%;
+  position: fixed; }
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  margin: .5em; }
+
+.nav-link:hover {
+  background-color: rgba(159, 158, 156, 0.92); }
+
+body {
+  background-color: #EDEDEB;
+  font-family: 'Lato', sans-serif; }
+
+input {
+  padding: .5em;
+  margin: .5em; }
+
+label {
+  display: block; }
+
+.friend-form {
+  padding: 1em;
+  width: 20em;
+  margin: 3em auto; }
+
+.text-field {
+  width: 100%;
+  font-size: 1em; }
+
+.text-field-label {
+  font-size: 1.5em; }
+
+.form-group-scale {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row; }
+
+.scale-labels {
+  padding: .2em; }
+
+.radio-labels {
+  padding: .1em 0; }
+
+.add-friend-btn {
+  padding: 1em;
+  width: 100%;
+  background: #65C178;
+  border: none;
+  border-radius: .25em; }
