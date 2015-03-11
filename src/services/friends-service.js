@@ -31,7 +31,7 @@ app.factory('friendsService', ['$http', '$log', function($http, $log) {
     },
 
     removeFriend: function (id) {
-      return remove('/api/friends' + id);
+      return remove('/api/friends/' + id);
     }
   };
 

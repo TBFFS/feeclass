@@ -22,10 +22,15 @@ app.config(['$routeProvider', function ($routeProvider) {
   self.newFriend = Friend();
 
   self.addFriend = function () {
-    console.log(self.newFriend);
+    console.log(self.friendList);
     friendsService.addFriend(self.newFriend).then(function () {
       self.goToData();
     })
+  }
+
+  self.removeFriend = function (id) {
+    alert('delete');
+    friendsService.removeFriend(id);
   }
 
   self.goToData = function () {

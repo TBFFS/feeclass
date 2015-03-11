@@ -10,11 +10,22 @@ app.config(['$routeProvider', function ($routeProvider) {
       }]
     }
   });
-}]).controller('DataCtrl', ['friends', function (friends) {
-  console.log('fasd');
+}]).controller('DataCtrl', ['friends', 'friendsService', function (friends, friendsService) {
   var self = this;
   self.friendList = friends;
-  console.log(self.friends);
+
+  self.removeFriend = function (id) {
+    console.log(id)
+    friendsService.removeFriend(id).then(function () {
+      for (var i = 0; i < self.friendList.length; ++i) {
+        if (self.friendList[i]._id === id) {
+          self.friendList.splice(i, 1);
+        }
+      }
+    })
+  }
+
+
 }]);
 (function () {
   app.directive('friendsList', function () {
@@ -89,10 +100,15 @@ app.config(['$routeProvider', function ($routeProvider) {
   self.newFriend = Friend();
 
   self.addFriend = function () {
-    console.log(self.newFriend);
+    console.log(self.friendList);
     friendsService.addFriend(self.newFriend).then(function () {
       self.goToData();
     })
+  }
+
+  self.removeFriend = function (id) {
+    alert('delete');
+    friendsService.removeFriend(id);
   }
 
   self.goToData = function () {
@@ -112,8 +128,8 @@ app.factory('friendsService', ['$http', '$log', function($http, $log) {
     return processAjaxPromise($http.post(url, friend));
   }
 
-  function remove (url, friend) {
-    return processAjaxPromise($http.delete(url, friend));
+  function remove (url) {
+    return processAjaxPromise($http.delete(url));
   }
 
   function processAjaxPromise(p) {
@@ -135,8 +151,8 @@ app.factory('friendsService', ['$http', '$log', function($http, $log) {
       return post('/api/friends', friend);
     },
 
-    removeFriend: function (friend) {
-      return remove('/api/friends', friend);
+    removeFriend: function (id) {
+      return remove('/api/friends/' + id);
     }
   };
 

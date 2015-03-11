@@ -1,8 +1,6 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
     app = express(),
-    // Nedb = require('nedb'),
-    // path = require('path'),
     Datastore = require('nedb'),
     db = new Datastore({ filename: 'db/friends.db', autoload: true });
 
