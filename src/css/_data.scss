@@ -19,6 +19,11 @@
 			padding: .5em;
 			margin: .5em;
 
+			.friend-name:hover {
+				cursor: pointer;
+				color: #BBB;
+			}
+
 			.delete-friend {
 				float: left;
 				margin-right: .5em;

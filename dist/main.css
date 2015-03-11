@@ -113,6 +113,9 @@ label {
     .list-container .friends-list .friend {
       padding: .5em;
       margin: .5em; }
+      .list-container .friends-list .friend .friend-name:hover {
+        cursor: pointer;
+        color: #BBB; }
       .list-container .friends-list .friend .delete-friend {
         float: left;
         margin-right: .5em; }
