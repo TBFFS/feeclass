@@ -7,8 +7,8 @@ app.factory('friendsService', ['$http', '$log', function($http, $log) {
     return processAjaxPromise($http.post(url, friend));
   }
 
-  function remove (url, friend) {
-    return processAjaxPromise($http.delete(url, friend));
+  function remove (url) {
+    return processAjaxPromise($http.delete(url));
   }
 
   function processAjaxPromise(p) {
@@ -30,8 +30,8 @@ app.factory('friendsService', ['$http', '$log', function($http, $log) {
       return post('/api/friends', friend);
     },
 
-    removeFriend: function (friend) {
-      return remove('/api/friends', friend);
+    removeFriend: function (id) {
+      return remove('/api/friends' + id);
     }
   };
 

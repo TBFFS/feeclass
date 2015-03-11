@@ -1,3 +1,5 @@
 <ul class="friends-list">
-  <li ng-repeat="user in vm.friendList | orderBy: 'name'">{{user.name}}</li>
+  <li ng-repeat="user in vm.friendList | orderBy: 'name'">{{user.name}}
+  	<button ng-click="removeFriend(user._id)"class="delete-friend">X</button>
+  </li>
 </ul>
