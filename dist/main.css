@@ -37,7 +37,8 @@ table {
   padding: 1em;
   width: 100%;
   position: fixed;
-  top: 0; }
+  top: 0;
+  z-index: 99; }
 
 .nav-link {
   color: white;
@@ -47,6 +48,12 @@ table {
 
 .nav-link:hover {
   background-color: rgba(159, 158, 156, 0.92); }
+
+.nav-icons {
+  font-family: 'portfolio-icons';
+  font-size: 1em;
+  margin-right: .5em;
+  vertical-align: bottom; }
 
 body {
   background-color: #EDEDEB;
@@ -90,5 +97,37 @@ label {
   border: none;
   border-radius: .25em; }
 
-.friends-list {
-  margin-top: 4em; }
+.list-container {
+  width: 100%; }
+  .list-container .friends-list-header {
+    padding-left: .5em; }
+  .list-container .friends-list {
+    position: absolute;
+    padding-top: 4em;
+    width: 13em;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: scroll;
+    border: 1px solid black; }
+    .list-container .friends-list .friend {
+      padding: .5em;
+      margin: .5em; }
+      .list-container .friends-list .friend .delete-friend {
+        float: left;
+        margin-right: .5em; }
+        .list-container .friends-list .friend .delete-friend:hover {
+          cursor: pointer;
+          color: #BBB; }
+  .list-container .icons {
+    font-family: 'portfolio-icons';
+    font-size: 1.3em; }
+
+.data-container {
+  border: 1px solid black;
+  position: absolute;
+  left: 13em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: scroll; }

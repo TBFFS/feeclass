@@ -1,0 +1,49 @@
+.list-container {
+	width: 100%;
+
+	.friends-list-header {
+		padding-left: .5em;
+	}
+
+	.friends-list {
+		position: absolute;
+		padding-top: 4em;
+		width: 13em;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		overflow: scroll;
+		border: 1px solid black;
+
+		.friend {
+			padding: .5em;
+			margin: .5em;
+
+			.delete-friend {
+				float: left;
+				margin-right: .5em;
+
+				&:hover {
+					cursor: pointer;
+					color: #BBB;
+				}
+			}
+		}
+	}
+
+	.icons {
+		font-family: 'portfolio-icons';
+		font-size: 1.3em;
+	}
+
+}
+
+.data-container {
+	border: 1px solid black;
+	position: absolute;
+	left: 13em;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: scroll;
+}
