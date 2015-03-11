@@ -17,7 +17,8 @@ label {
 .friend-form {
   padding: 1em;
   width: 20em;
-  margin: 3em auto;
+  margin: 5em auto;
+  position: relative;
 }
 
 .form-group {
@@ -64,5 +65,18 @@ label {
   &:hover {
     background: #BBB;
     color: #FFF;
+  }
+}
+
+.details-delete-btn {
+  font-size: 2em;
+  position: absolute;
+  top: 0;
+  right: -0.5em;
+  color: #3D3D3D;
+
+  &:hover {
+    cursor: pointer;
+    color: #BBB;
   }
 }

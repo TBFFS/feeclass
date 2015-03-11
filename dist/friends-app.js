@@ -104,6 +104,8 @@ app.config(['$routeProvider', function ($routeProvider) {
 
   self.friend = Friend();
 
+  self.saveText = 'Add Friend';
+
   self.saveFriend = function () {
     console.log(self.friendList);
     friendsService.addFriend(self.friend).then(function () {
@@ -141,6 +143,8 @@ app.config(['$routeProvider', function ($routeProvider) {
   self.friend = friend;
 
   console.log(self.friend);
+  
+  self.saveText = 'Save friend';
 
   self.saveFriend = function () {
     console.log(self.friendList);

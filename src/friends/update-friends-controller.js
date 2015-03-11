@@ -18,6 +18,8 @@ app.config(['$routeProvider', function ($routeProvider) {
   self.friend = friend;
 
   console.log(self.friend);
+  
+  self.saveText = 'Save friend';
 
   self.saveFriend = function () {
     console.log(self.friendList);

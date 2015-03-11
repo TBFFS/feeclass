@@ -2,9 +2,9 @@
 	<ul class="friends-list">
 		<h3 class="friends-list-header">My Friends</h3>
 	  <li class="friend" title="Click to Edit" ng-repeat="friend in vm.friendList | orderBy: 'name'">
-      <span class="friend-name" ng-click="vm.goToEdit(friend._id)">{{friend.name}}</span>
+      <span title="Edit" class="friend-name" ng-click="vm.goToEdit(friend._id)">{{friend.name}}</span>
 	  	<span class="friend-options">
-	  		<span ng-click="vm.removeFriend(friend._id)" class="delete-friend icons">k</span>
+	  		<span title="Delete" ng-click="vm.removeFriend(friend._id)" class="delete-friend icons">k</span>
 	  	</span>
 	  </li>
 	</ul>

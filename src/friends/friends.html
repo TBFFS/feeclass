@@ -1,6 +1,6 @@
-<h1>Hello TBFFs!</h1>
 
 <form class="friend-form" ng-submit="vm.saveFriend()">
+<span class="details-delete-btn nav-icons" title="Delete" ng-if="vm.friend._id" ng-click="vm.removeFriend(vm.friend._id)">k</span>
   <div class="form-group">
     <label class="text-field-label">Name</label>
     <input class="text-field" ng-model="vm.friend.name" type="text" name="name">
@@ -67,6 +67,6 @@
     </div>
   </div>
 
-  <button class="add-friend-btn"><span class="nav-icons">r</span>Add Friend</button>
+  <button class="add-friend-btn"><span class="nav-icons">r</span>{{vm.saveText}}</button>
 
 </form>
