@@ -103,7 +103,8 @@ label {
   width: 100%;
   background: #65C178;
   border: none;
-  border-radius: .25em; }
+  border-radius: .25em;
+  cursor: pointer; }
   .add-friend-btn:hover {
     background: #BBB;
     color: #FFF; }
