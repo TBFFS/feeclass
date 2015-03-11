@@ -9,7 +9,7 @@ app.config(['$routeProvider', function ($routeProvider) {
       }]
     }
   });
-}]).controller('DataCtrl', ['friends', 'friendsService', function (friends, friendsService) {
+}]).controller('DataCtrl', ['$location', 'friends', 'friendsService', function ($location, friends, friendsService) {
   var self = this;
   self.friendList = friends;
 
@@ -22,7 +22,12 @@ app.config(['$routeProvider', function ($routeProvider) {
         }
       }
     })
-  }
+  };
+
+  self.goToEdit = function (id) {
+    $location.path('/friends/' + id + '/edit');
+    console.log(id);
+  };
 
 
 }]);
