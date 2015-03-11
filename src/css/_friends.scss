@@ -7,7 +7,7 @@ body {
 
 input {
   padding: .5em;
-  margin: .5em;
+  margin: .5em 0;
 }
 
 label {
@@ -21,10 +21,11 @@ label {
 }
 
 .form-group {
-
+  margin-top: 0.5em;
 }
 
 .text-field {
+  box-sizing: border-box;
   width: 100%;
   font-size: 1em;
 }
@@ -34,6 +35,7 @@ label {
 }
 
 .form-group-scale {
+  margin: 1em 0;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -49,9 +51,17 @@ label {
 }
 
 .add-friend-btn {
+  font-size: 1em;
+  font-family: 'Lato', sans-serif;
   padding: 1em;
+  margin-top: 2em;
   width: 100%;
   background: #65C178;
   border: none;
   border-radius: .25em;
+
+  &:hover {
+    background: #BBB;
+    color: #FFF;
+  }
 }
