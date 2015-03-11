@@ -10,7 +10,7 @@ app.config(['$routeProvider', function ($routeProvider) {
       }]
     }
   });
-}]).controller('DataCtrl', ['friends', 'friendsService', function (friends, friendsService) {
+}]).controller('DataCtrl', ['$location', 'friends', 'friendsService', function ($location, friends, friendsService) {
   var self = this;
   self.friendList = friends;
 
@@ -23,7 +23,12 @@ app.config(['$routeProvider', function ($routeProvider) {
         }
       }
     })
-  }
+  };
+
+  self.goToEdit = function (id) {
+    $location.path('/friends/' + id + '/edit');
+    console.log(id);
+  };
 
 
 }]);
@@ -97,39 +102,82 @@ app.config(['$routeProvider', function ($routeProvider) {
 
   console.log(self.friendList);
 
-  self.newFriend = Friend();
+  self.friend = Friend();
 
-  self.addFriend = function () {
+  self.saveFriend = function () {
     console.log(self.friendList);
-    friendsService.addFriend(self.newFriend).then(function () {
+    friendsService.addFriend(self.friend).then(function () {
       self.goToData();
     })
-  }
+  };
 
   self.removeFriend = function (id) {
     alert('delete');
     friendsService.removeFriend(id);
-  }
+  };
 
   self.goToData = function () {
     $location.path('/data');
-  }
+  };
+
+}])
+app.config(['$routeProvider', function ($routeProvider) {
+  var routeDefinition = {
+    controller: 'UpdateFriendsCtrl',
+    controllerAs: 'vm',
+    templateUrl: 'friends/friends.html',
+    resolve: {
+      friend: ['friendsService', '$route', function (friendsService, $route) {
+        return friendsService.getFriend($route.current.params.friendId);
+      }]
+    }
+  };
+  $routeProvider.when('/friends/:friendId/edit', routeDefinition)
+}])
+.controller('UpdateFriendsCtrl', ['$location', 'friend', 'friendsService', function ($location, friend, friendsService) {
+
+  var self = this;
+
+  self.friend = friend;
+
+  console.log(self.friend);
+
+  self.saveFriend = function () {
+    console.log(self.friendList);
+    friendsService.updateFriend(self.friend).then(function () {
+      self.goToData();
+    })
+  };
+
+  self.removeFriend = function (id) {
+    alert('delete');
+    friendsService.removeFriend(id);
+    self.goToData();
+  };
+
+  self.goToData = function () {
+    $location.path('/data');
+  };
 
 }])
 app.controller('NavCtrl', function () {
   console.log('test')
 })
 app.factory('friendsService', ['$http', '$log', function($http, $log) {
-  function get(url) {
+  function get (url) {
     return processAjaxPromise($http.get(url));
   }
 
-  function post(url, friend) {
+  function post (url, friend) {
     return processAjaxPromise($http.post(url, friend));
   }
 
   function remove (url) {
     return processAjaxPromise($http.delete(url));
+  }
+
+  function update (url, friend) {
+    return processAjaxPromise($http.put(url, friend));
   }
 
   function processAjaxPromise(p) {
@@ -153,6 +201,14 @@ app.factory('friendsService', ['$http', '$log', function($http, $log) {
 
     removeFriend: function (id) {
       return remove('/api/friends/' + id);
+    },
+
+    updateFriend: function (id) {
+      return update('/api/friends/' + id, friend);
+    },
+
+    getFriend: function (id) {
+      return get('/api/friends/' + id);
     }
   };
 

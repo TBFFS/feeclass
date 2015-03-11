@@ -19,22 +19,22 @@ app.config(['$routeProvider', function ($routeProvider) {
 
   console.log(self.friendList);
 
-  self.newFriend = Friend();
+  self.friend = Friend();
 
-  self.addFriend = function () {
+  self.saveFriend = function () {
     console.log(self.friendList);
-    friendsService.addFriend(self.newFriend).then(function () {
+    friendsService.addFriend(self.friend).then(function () {
       self.goToData();
     })
-  }
+  };
 
   self.removeFriend = function (id) {
     alert('delete');
     friendsService.removeFriend(id);
-  }
+  };
 
   self.goToData = function () {
     $location.path('/data');
-  }
+  };
 
 }])
