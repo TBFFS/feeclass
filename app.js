@@ -29,6 +29,7 @@ app.get('/api/friends', function (req, res) {
 app.post('/api/friends', function (req, res) {
   var friend = {
     name: req.body.name,
+    address: req.body.address,
     gender: req.body.gender,
     birthDate: req.body.birthDate,
     hair: req.body.hair,
@@ -57,18 +58,29 @@ app.delete('/api/friends/:id', function (req, res) {
 });
 
 app.put('/api/friends/:id', function (req, res) {
-  db.update({ _id: req.params.id }, {}, function (err, friend) {
+  var friend = {
+    name: req.body.name,
+    address: req.body.address,
+    gender: req.body.gender,
+    birthDate: req.body.birthDate,
+    hair: req.body.hair,
+    birthCity: req.body.birthCity
+  };
+
+  db.update({ _id: req.params.id }, friend, {}, function (err, friendRecord) {
     if (err) {
       console.log(err);
       res.status(500).json(err);
     } else {
-      res.json(friend);
+      res.json({friendsUpdated: friendRecord});
     }
   });
 });
 
-app.get('api/friends/:id', function (req, res) {
+
+app.get('/api/friends/:id', function (req, res) {
   db.findOne({ _id: req.params.id }, function (err, friend) {
+    // alert('gettin a friend');
     if (err) {
       console.log(err);
       res.status(500).json(err);

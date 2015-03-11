@@ -38,8 +38,8 @@ app.factory('friendsService', ['$http', '$log', function($http, $log) {
       return remove('/api/friends/' + id);
     },
 
-    updateFriend: function (id) {
-      return update('/api/friends/' + id, friend);
+    updateFriend: function (friend) {
+      return update('/api/friends/' + friend._id, friend);
     },
 
     getFriend: function (id) {
